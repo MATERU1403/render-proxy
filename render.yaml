@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: render-proxy
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: PROXY_PASSWORD
+        sync: false
